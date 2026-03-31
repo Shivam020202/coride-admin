@@ -1,0 +1,249 @@
+/* ── Verification Stats Row ── */
+.verification-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.v-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.v-stat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.v-stat-icon.pending {
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+.v-stat-icon.approved {
+  background: #dcfce7;
+  color: #22c55e;
+}
+
+.v-stat-icon.rejected {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.v-stat-icon.incomplete {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.v-stat-info h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.v-stat-info p {
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ── Verification badges ── */
+.v-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.v-badge.pending_review {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.v-badge.approved {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.v-badge.rejected {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.v-badge.incomplete {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* ── Detail Modal ── */
+.v-modal-panel {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: modalPop 0.25s ease;
+}
+
+.v-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.v-modal-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e0e7ff, #ddd6fe);
+  color: #4f46e5;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.v-modal-header-info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.v-modal-header-info p {
+  margin: 2px 0 0;
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+}
+
+/* ── Doc list in modal ── */
+.v-docs-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  margin: 20px 0 10px;
+}
+
+.v-doc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.v-doc-row:last-child {
+  border-bottom: none;
+}
+
+.v-doc-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.v-doc-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.v-doc-link {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: 500;
+}
+
+.v-doc-link:hover {
+  color: #1d4ed8;
+}
+
+/* ── Actions in modal ── */
+.v-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.v-action-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.v-action-btn.approve {
+  background: #18181b;
+  color: #fafafa;
+}
+
+.v-action-btn.approve:hover {
+  background: #27272a;
+}
+
+.v-action-btn.reject {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.v-action-btn.reject:hover {
+  background: #fecaca;
+}
+
+.v-note-input {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  outline: none;
+  resize: none;
+  min-height: 60px;
+  color: var(--text);
+  background: var(--bg);
+  font-family: inherit;
+}
+
+.v-note-input:focus {
+  border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .verification-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

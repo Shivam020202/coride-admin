@@ -58,7 +58,7 @@ export default function Dashboard() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) {
+  if (loading || !stats) {
     return (
       <div className="page-wrapper">
         <Header title="Dashboard" />

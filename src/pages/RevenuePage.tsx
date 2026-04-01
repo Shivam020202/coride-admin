@@ -35,7 +35,7 @@ export default function RevenuePage() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) {
+  if (loading || !stats) {
     return (
       <div className="page-wrapper">
         <Header title="Revenue" />

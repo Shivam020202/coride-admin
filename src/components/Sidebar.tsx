@@ -7,6 +7,7 @@ import {
   Activity,
   Settings,
   ShieldCheck,
+  LogOut,
 } from "lucide-react";
 import "./Sidebar.css";
 
@@ -60,6 +61,16 @@ export default function Sidebar() {
       </nav>
 
       <div className="sidebar-footer">
+        <button
+          className="logout-btn"
+          onClick={() => {
+            sessionStorage.removeItem("adminAuth");
+            window.location.reload();
+          }}
+        >
+          <LogOut size={16} />
+          <span>Sign out</span>
+        </button>
         <div className="env-badge">Production</div>
         <span className="version">v1.0.0</span>
       </div>

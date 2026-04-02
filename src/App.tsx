@@ -14,6 +14,7 @@ export default function App() {
   const [authed, setAuthed] = useState(
     () => sessionStorage.getItem("adminAuth") === "true"
   );
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   if (!authed) {
     return <LoginPage onLogin={() => setAuthed(true)} />;
@@ -21,16 +22,18 @@ export default function App() {
 
   return (
     <>
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/users" element={<UsersPage />} />
-        <Route path="/rides" element={<RidesPage />} />
-        <Route path="/revenue" element={<RevenuePage />} />
-        <Route path="/verifications" element={<VerificationsPage />} />
-        <Route path="/live" element={<LiveMonitor />} />
-        <Route path="/settings" element={<SettingsPage />} />
-      </Routes>
+      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <div className="main-content">
+        <Routes>
+          <Route path="/" element={<Dashboard onMenuClick={() => setSidebarOpen(true)} />} />
+          <Route path="/users" element={<UsersPage onMenuClick={() => setSidebarOpen(true)} />} />
+          <Route path="/rides" element={<RidesPage onMenuClick={() => setSidebarOpen(true)} />} />
+          <Route path="/revenue" element={<RevenuePage onMenuClick={() => setSidebarOpen(true)} />} />
+          <Route path="/verifications" element={<VerificationsPage onMenuClick={() => setSidebarOpen(true)} />} />
+          <Route path="/live" element={<LiveMonitor onMenuClick={() => setSidebarOpen(true)} />} />
+          <Route path="/settings" element={<SettingsPage onMenuClick={() => setSidebarOpen(true)} />} />
+        </Routes>
+      </div>
     </>
   );
 }

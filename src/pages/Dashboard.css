@@ -1,6 +1,5 @@
 .page-wrapper {
   flex: 1;
-  margin-left: var(--sidebar-w);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -82,6 +81,7 @@
   border-radius: var(--radius);
   padding: 24px;
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
 .chart-card.full {
@@ -104,11 +104,50 @@
   font-size: 0.9rem;
 }
 
+/* ── Tablet ── */
 @media (max-width: 1200px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .charts-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .mini-stat {
+    min-width: 120px;
+    padding: 10px 12px;
+  }
+
+  .chart-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-content {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .mini-stat {
+    min-width: 0;
   }
 }

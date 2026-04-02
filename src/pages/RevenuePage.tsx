@@ -23,7 +23,7 @@ import StatCard from "../components/StatCard";
 import api from "../api";
 import "./Dashboard.css";
 
-export default function RevenuePage() {
+export default function RevenuePage({ onMenuClick }: { onMenuClick: () => void }) {
   const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
@@ -38,7 +38,7 @@ export default function RevenuePage() {
   if (loading || !stats) {
     return (
       <div className="page-wrapper">
-        <Header title="Revenue" />
+        <Header title="Revenue" onMenuClick={onMenuClick} />
         <div className="page-content">
           <div className="loading-state">Loading revenue data...</div>
         </div>
@@ -69,7 +69,7 @@ export default function RevenuePage() {
 
   return (
     <div className="page-wrapper">
-      <Header title="Revenue & Payments" />
+      <Header title="Revenue & Payments" onMenuClick={onMenuClick} />
       <div className="page-content">
         <div className="stats-grid">
           <StatCard

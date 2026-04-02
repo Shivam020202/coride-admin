@@ -233,3 +233,15 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .settings-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .env-grid {
+    grid-template-columns: 1fr;
+  }
+}

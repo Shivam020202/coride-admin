@@ -46,7 +46,7 @@ interface Stats {
 
 const COLORS = ["#3b82f6", "#10b981", "#f59e0b", "#ef4444"];
 
-export default function Dashboard() {
+export default function Dashboard({ onMenuClick }: { onMenuClick: () => void }) {
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -61,7 +61,7 @@ export default function Dashboard() {
   if (loading || !stats) {
     return (
       <div className="page-wrapper">
-        <Header title="Dashboard" />
+        <Header title="Dashboard" onMenuClick={onMenuClick} />
         <div className="page-content">
           <div className="loading-state">Loading dashboard...</div>
         </div>
@@ -101,7 +101,7 @@ export default function Dashboard() {
 
   return (
     <div className="page-wrapper">
-      <Header title="Dashboard" />
+      <Header title="Dashboard" onMenuClick={onMenuClick} />
       <div className="page-content">
         {/* Stats row */}
         <div className="stats-grid">

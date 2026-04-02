@@ -249,3 +249,36 @@
   font-weight: 700;
   color: #0f172a;
 }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .live-stats-bar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .live-stat-items {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .active-rides-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-text {
+    max-width: 160px;
+  }
+
+  .tab-bar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+}

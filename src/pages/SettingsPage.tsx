@@ -9,7 +9,7 @@ import {
 import Header from "../components/Header";
 import "./SettingsPage.css";
 
-export default function SettingsPage() {
+export default function SettingsPage({ onMenuClick }: { onMenuClick: () => void }) {
   const [platformFee, setPlatformFee] = useState("20");
   const [minFare, setMinFare] = useState("5.00");
   const [maxDistance, setMaxDistance] = useState("50");
@@ -19,7 +19,7 @@ export default function SettingsPage() {
 
   return (
     <div className="page-wrapper">
-      <Header title="Settings" />
+      <Header title="Settings" onMenuClick={onMenuClick} />
       <div className="page-content">
         <div className="settings-grid">
           {/* Platform config */}

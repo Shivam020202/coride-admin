@@ -245,5 +245,25 @@
 @media (max-width: 768px) {
   .verification-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .v-stat-card {
+    padding: 12px 14px;
+  }
+
+  .v-modal-panel {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .v-modal-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .verification-stats {
+    grid-template-columns: 1fr;
   }
 }

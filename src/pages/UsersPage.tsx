@@ -20,7 +20,7 @@ interface User {
   createdAt: string;
 }
 
-export default function UsersPage() {
+export default function UsersPage({ onMenuClick }: { onMenuClick: () => void }) {
   const [users, setUsers] = useState<User[]>([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -66,7 +66,7 @@ export default function UsersPage() {
 
   return (
     <div className="page-wrapper">
-      <Header title="Users" />
+      <Header title="Users" onMenuClick={onMenuClick} />
       <div className="page-content">
         {/* Filters */}
         <div className="table-toolbar">

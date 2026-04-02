@@ -35,7 +35,7 @@ interface ActiveRide {
   createdAt: string;
 }
 
-export default function RidesPage() {
+export default function RidesPage({ onMenuClick }: { onMenuClick: () => void }) {
   const [rides, setRides] = useState<Ride[]>([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -87,7 +87,7 @@ export default function RidesPage() {
 
   return (
     <div className="page-wrapper">
-      <Header title="Rides" />
+      <Header title="Rides" onMenuClick={onMenuClick} />
       <div className="page-content">
         {/* Tab switcher */}
         <div className="tab-bar">

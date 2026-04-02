@@ -11,6 +11,24 @@
   z-index: 50;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-btn {
+  display: none;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  color: var(--text);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 .page-title {
   font-size: 1.25rem;
   font-weight: 700;
@@ -97,4 +115,30 @@
   font-weight: 700;
   font-size: 0.8rem;
   color: #fff;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .search-box {
+    width: 180px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 0 16px;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 1.05rem;
+  }
 }

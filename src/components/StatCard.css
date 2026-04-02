@@ -58,3 +58,24 @@
 .stat-trend.down {
   color: var(--danger);
 }
+
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+  }
+}

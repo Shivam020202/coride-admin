@@ -13,7 +13,7 @@ import api from "../api";
 import "./Table.css";
 import "./LiveMonitor.css";
 
-export default function LiveMonitor() {
+export default function LiveMonitor({ onMenuClick }: { onMenuClick: () => void }) {
   const [activeRides, setActiveRides] = useState<any[]>([]);
   const [activeRequests, setActiveRequests] = useState<any[]>([]);
   const [lastUpdate, setLastUpdate] = useState(new Date());
@@ -39,7 +39,7 @@ export default function LiveMonitor() {
 
   return (
     <div className="page-wrapper">
-      <Header title="Live Monitor" />
+      <Header title="Live Monitor" onMenuClick={onMenuClick} />
       <div className="page-content">
         {/* Live stats bar */}
         <div className="live-stats-bar">

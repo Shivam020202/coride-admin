@@ -45,7 +45,7 @@ interface VStats {
 
 const API_BASE = import.meta.env.VITE_API_URL?.replace("/api", "") || "http://localhost:5000";
 
-export default function VerificationsPage() {
+export default function VerificationsPage({ onMenuClick }: { onMenuClick: () => void }) {
   const [verifications, setVerifications] = useState<Verification[]>([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -132,7 +132,7 @@ export default function VerificationsPage() {
 
   return (
     <div className="page-wrapper">
-      <Header title="Driver Verifications" />
+      <Header title="Driver Verifications" onMenuClick={onMenuClick} />
       <div className="page-content">
         {/* Stats */}
         <div className="verification-stats">

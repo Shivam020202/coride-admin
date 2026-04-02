@@ -1,10 +1,20 @@
-import { Search, Bell } from "lucide-react";
+import { Search, Bell, Menu } from "lucide-react";
 import "./Header.css";
 
-export default function Header({ title }: { title: string }) {
+interface Props {
+  title: string;
+  onMenuClick: () => void;
+}
+
+export default function Header({ title, onMenuClick }: Props) {
   return (
     <header className="admin-header">
-      <h1 className="page-title">{title}</h1>
+      <div className="header-left">
+        <button className="menu-btn" onClick={onMenuClick}>
+          <Menu size={20} />
+        </button>
+        <h1 className="page-title">{title}</h1>
+      </div>
       <div className="header-actions">
         <div className="search-box">
           <Search size={16} />

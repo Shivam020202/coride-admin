@@ -38,12 +38,23 @@
   letter-spacing: -0.3px;
 }
 
+.sidebar-close-btn {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  padding: 4px;
+  cursor: pointer;
+}
+
 .sidebar-nav {
   flex: 1;
   padding: 16px 12px;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  overflow-y: auto;
 }
 
 .nav-section-label {
@@ -131,4 +142,34 @@
 .version {
   color: #475569;
   font-size: 0.75rem;
+}
+
+/* Mobile backdrop */
+.sidebar-backdrop {
+  display: none;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 200;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close-btn {
+    display: block;
+  }
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 199;
+  }
 }
